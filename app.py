@@ -65,5 +65,5 @@ def generate():
         # Return an error message
         return jsonify({"error": "API request failed"}), response.status_code
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
