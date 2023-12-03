@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <!-- Form Here -->
+            <form id="jobForm">
+                <input type="text" name="name" placeholder="Enter your name">
+                <input type="text" name="job1" placeholder="Job 1">
+                <input type="text" name="duration1" placeholder="Duration 1">
+                <input type="text" name="job2" placeholder="Job 2">
+                <input type="text" name="duration2" placeholder="Duration 2">
+                <input type="text" name="job3" placeholder="Job 3">
+                <input type="text" name="duration3" placeholder="Duration 3">
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+        <div class="right">
+            <div id="results" class="result"></div>
+        </div>
+    </div>
+
+    <div id="results"></div> <!-- This will hold the results -->
+
+    <script>
+        document.getElementById('jobForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the normal form submission
+            var formData = new FormData(this);
+
+            // Make the AJAX request
+            fetch('/generate', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+                .then(data => {
+                    var resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = ''; // Clear previous results
+                    if (data.completionText) {
+                        // Split the completion text into parts and format
+                        var paragraphs = data.completionText.split(/\n\n|\n/); // Split on double line breaks or single line breaks
+                        paragraphs.forEach(function (paragraph) {
+                            var p = document.createElement('p');
+                            p.textContent = paragraph;
+                            resultsDiv.appendChild(p);
+                        });
+                    } else {
+                        resultsDiv.textContent = 'No results to display or there was an error.';
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('results').textContent = 'An error occurred while processing your request.';
+                });
+        });
+    </script>
+
+</body>
+
+</html>

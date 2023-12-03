@@ -1,0 +1,124 @@
+{
+    "run": {
+        "config": {
+            "blocks": {
+                "MODEL": {
+                    "model_id": "gpt-3.5-turbo",
+                    "provider_id": "openai",
+                    "use_cache": true
+                }
+            }
+        },
+        "created": 1701555020750,
+        "results": [
+            [
+                {
+                    "error": null,
+                    "meta": {
+                        "logs": []
+                    },
+                    "value": "Based on Tim's previous experience and the duration in each role, here are three potential next steps for his career:\n\n1. Operations Manager: With Tim's experience as an Operations Analyst and his duration in the role, he has developed a solid understanding of operational processes and strategies. Moving into a role as an Operations Manager would allow him to leverage his skills and take on a leadership position within the operations department.\n\n2. Business Development Manager: Tim's experience as a Finance and Business Development Associate showcases his ability to analyze financial data and contribute to business growth. Based on this experience, he could pursue a role as a Business Development Manager, where he can utilize his financial knowledge alongside his business development skills to identify new opportunities and drive revenue growth.\n\n3. Marketing Manager: Tim's internship in Marketing and Business Development provides him with a foundation in marketing principles and strategies. Building on this experience, he could consider transitioning into a role as a Marketing Manager. This would allow him to apply his marketing knowledge, collaborate with cross-functional teams, and develop and implement marketing campaigns to drive brand awareness and customer acquisition.\n\nThese three potential next steps align with Tim's previous experience, ensuring that he can continue progressing in his career without moving backwards in terms of job level."
+                }
+            ]
+        ],
+        "run_id": "b6f11a4799cf37466eb09505042958d2bd0c718394e7470c6d4ec1cc369a6733",
+        "run_type": "deploy",
+        "specification_hash": "7bf8906f4a752cebb18747181ab5f30c9a921b768d09d55c9db9be34fd4808e5",
+        "status": {
+            "blocks": [
+                {
+                    "block_type": "input",
+                    "error_count": 0,
+                    "name": "INPUT",
+                    "status": "succeeded",
+                    "success_count": 1
+                },
+                {
+                    "block_type": "llm",
+                    "error_count": 0,
+                    "name": "MODEL",
+                    "status": "succeeded",
+                    "success_count": 1
+                },
+                {
+                    "block_type": "code",
+                    "error_count": 0,
+                    "name": "FINAL",
+                    "status": "succeeded",
+                    "success_count": 1
+                }
+            ],
+            "run": "succeeded"
+        },
+        "traces": [
+            [
+                [
+                    "input",
+                    "INPUT"
+                ],
+                [
+                    [
+                        {
+                            "error": null,
+                            "meta": null,
+                            "value": {
+                                "duration1": "1 year and 2 months",
+                                "duration2": "2 years and 1 month",
+                                "duration3": "7 months",
+                                "job1": "Operations Analyst",
+                                "job2": "Finance and Business Development Associate",
+                                "job3": "Marketing and Business Development Intern",
+                                "name": "Tim"
+                            }
+                        }
+                    ]
+                ]
+            ],
+            [
+                [
+                    "llm",
+                    "MODEL"
+                ],
+                [
+                    [
+                        {
+                            "error": null,
+                            "meta": null,
+                            "value": {
+                                "completion": {
+                                    "logprobs": null,
+                                    "text": "Based on Tim's previous experience and the duration in each role, here are three potential next steps for his career:\n\n1. Operations Manager: With Tim's experience as an Operations Analyst and his duration in the role, he has developed a solid understanding of operational processes and strategies. Moving into a role as an Operations Manager would allow him to leverage his skills and take on a leadership position within the operations department.\n\n2. Business Development Manager: Tim's experience as a Finance and Business Development Associate showcases his ability to analyze financial data and contribute to business growth. Based on this experience, he could pursue a role as a Business Development Manager, where he can utilize his financial knowledge alongside his business development skills to identify new opportunities and drive revenue growth.\n\n3. Marketing Manager: Tim's internship in Marketing and Business Development provides him with a foundation in marketing principles and strategies. Building on this experience, he could consider transitioning into a role as a Marketing Manager. This would allow him to apply his marketing knowledge, collaborate with cross-functional teams, and develop and implement marketing campaigns to drive brand awareness and customer acquisition.\n\nThese three potential next steps align with Tim's previous experience, ensuring that he can continue progressing in his career without moving backwards in terms of job level.",
+                                    "tokens": null,
+                                    "top_logprobs": null
+                                },
+                                "prompt": {
+                                    "logprobs": null,
+                                    "text": "You are the best career advisor in the world, and you have helped nearly a million people successfully plan their career paths. 95% of these people found what they wanted to do in their lives and are happily using their skills in the field of their choice. \n\nI am creating an application that will help people do the same, with your help.\n\nFor example, Tim has had three jobs in the past, namely: \n\nOperations Analyst for 1 year and 2 months\nFinance and Business Development Associate for 2 years and 1 month\nMarketing and Business Development Intern for 7 months.\n\nYou will provide 3 potential next steps a person can take in their careers based on their previous experience and the duration in their role. These 3 next steps should be the intersection of all 3 of their past roles, if possible. Also, make sure that the next steps are not a level below any of their past jobs; make them at least the same level or above so that they can move up in their careers, and not backwards.\n",
+                                    "tokens": null,
+                                    "top_logprobs": null
+                                }
+                            }
+                        }
+                    ]
+                ]
+            ],
+            [
+                [
+                    "code",
+                    "FINAL"
+                ],
+                [
+                    [
+                        {
+                            "error": null,
+                            "meta": {
+                                "logs": []
+                            },
+                            "value": "Based on Tim's previous experience and the duration in each role, here are three potential next steps for his career:\n\n1. Operations Manager: With Tim's experience as an Operations Analyst and his duration in the role, he has developed a solid understanding of operational processes and strategies. Moving into a role as an Operations Manager would allow him to leverage his skills and take on a leadership position within the operations department.\n\n2. Business Development Manager: Tim's experience as a Finance and Business Development Associate showcases his ability to analyze financial data and contribute to business growth. Based on this experience, he could pursue a role as a Business Development Manager, where he can utilize his financial knowledge alongside his business development skills to identify new opportunities and drive revenue growth.\n\n3. Marketing Manager: Tim's internship in Marketing and Business Development provides him with a foundation in marketing principles and strategies. Building on this experience, he could consider transitioning into a role as a Marketing Manager. This would allow him to apply his marketing knowledge, collaborate with cross-functional teams, and develop and implement marketing campaigns to drive brand awareness and customer acquisition.\n\nThese three potential next steps align with Tim's previous experience, ensuring that he can continue progressing in his career without moving backwards in terms of job level."
+                        }
+                    ]
+                ]
+            ]
+        ]
+    }
+}
