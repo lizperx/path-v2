@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 import requests
 import os
+import logging
+from datetime import datetime
 from dotenv import load_dotenv
 
 app = Flask(__name__)
 load_dotenv()  # This loads the environment variables from the .env file.
+
+logging.basicConfig(level=logging.INFO)
 
 @app.route('/')
 def home():
@@ -20,6 +24,10 @@ def generate():
     duration2 = request.form['duration2']
     job3 = request.form['job3']
     duration3 = request.form['duration3']
+
+    # Log the start of the request
+    start_time = datetime.now()
+    logging.info(f"Starting API request for {name} at {start_time}")
 
     # Adjusted inputs structure based on API expectation
     inputs = {
@@ -55,6 +63,11 @@ def generate():
         },
         json=data
     )
+
+    # Log the end of the request
+    end_time = datetime.now()
+    logging.info(f"Received response from API for {name} at {end_time}")
+    logging.info(f"Total API request time for {name}: {(end_time - start_time).total_seconds()} seconds")
 
     # Get response
     if response.status_code == 200:
